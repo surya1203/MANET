@@ -11,8 +11,8 @@ def calculate_dist(loc1, loc2):
 
     delta_lambda = abs(lat1 - lat2)
     delta_phi = abs(long1 - long2)
-    hav_delta_lambda = math.sin(delta_lambda / 2) * math.sin(delta_lambda / 2)
-    hav_delta_phi = math.sin(delta_phi / 2) * math.sin(delta_phi / 2)
+    hav_delta_lambda = math.sin(delta_lambda / 2) ** 2
+    hav_delta_phi = math.sin(delta_phi / 2) ** 2
 
     d = 2 * r * math.asin(math.sqrt(hav_delta_phi + (math.cos(lat1) * math.cos(lat2) * hav_delta_lambda)))
     return d
